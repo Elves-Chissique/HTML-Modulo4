@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de frames</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-image: url('assets/imagens/pexels-rafael-guajardo-604684.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: aliceblue;
+        }
+        body > div > h1{
+            margin-top: 0.2em;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.527);
+            border-top: 2px solid #ffffffad;
+            border-bottom: 2px solid #ffffffad;
+        }
+        div > nav{
+            margin-top: 0.6em;
+        }
+        div > nav > ul > li{
+            cursor: pointer;
+            border-bottom: 2px solid #000;
+            margin: 0.5em;
+            margin-left:1.5em ;
+            list-style: none;
+            display: inline-block;
+            padding: 0.2em;
+            
+        }
+        div > nav > ul > li:hover{
+            padding: 0.2em;
+            border-bottom: 2px solid #ffffffad;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        iframe{
+            display: block;
+            margin: auto;
+            width: 30em;
+            height: 25em;
+            transition: 2s;
+            animation: fadeIn 10s forwards;
+        }
+        @keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>
+            Estou aqui mais uma vez a estudar Frames no html
+        </h1>
+
+        <nav>
+            <ul>
+                <li><a href="primeira.html" target="Mostrar">Home</a></li>
+                <li><a href="Sedunda.html" target="Mostrar">About</a></li>
+                <li><a href="Terceira.html" target="Mostrar">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div>
+        <iframe name="Mostrar" src="primeira.html" frameborder="0">O seu navegador não suporta esta tecnologia</iframe>
+    </div>
+</body>
+</html>

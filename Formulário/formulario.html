@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        h1{
+            background-color: aquamarine;
+            padding: 5px;
+            border-bottom: 2px solid red;
+            text-align: center;
+        }
+        form{
+            width: 50vw;
+            margin: auto;
+        }
+
+        form > fieldset > p > input.pessoal{
+            padding: 5px;
+            width: 80%;
+            background-color: rgb(71, 67, 67);
+            transition: 1s;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom:2px solid aquamarine;
+            border-radius: 15px;
+        }
+
+        form > fieldset > p > input.pessoal:hover{
+            background-color: rgb(42, 151, 165);
+        }
+
+        .servico{
+            float: left;
+        }
+
+        .carrateristicas{
+            float: right;
+        }
+
+        #sub{
+            text-align: center;
+        }
+
+        #sub > input{
+            padding: 7px;
+            border-radius: 10px;
+            background-color: aquamarine;
+            transition: .5s;
+        }
+
+        #sub > input:hover{
+         
+            background-color:rgb(71, 67, 67) ;
+            border: 2.5px solid aquamarine;
+        }
+
+        #isoma, #ivRange{
+            background-color: rgb(198, 255, 255);
+            color:red;
+            padding:5px 60px 5px 60px;
+            margin-top: 15px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Crianção de Formulário</h1>
+        <form action="cadastro.php"  method="POST">
+            <fieldset><legend>Informação Pessoal</legend>
+                <p>
+                    <label for="iNome">Nome:</label>
+                    <input class="pessoal" type="text" id="iNome" name="nome" required minlength="5" maxlength="5">
+                </p>
+                <p>
+                    <label for="iEmail">Email:</label>
+                    <input class="pessoal" type="email" id="iEmail" name="email" required maxlength="30" minlength="4">
+                </p>
+                <p>
+                    <label for="iNumero">Número:</label>
+                    <input class="pessoal" type="number" id="iNumero" name="numero" required>
+                </p>
+
+                <fieldset> <legend>Sexo</legend>
+                    <input type="radio" name="sexo" id="ihomem" value="Homem" checked>
+                    <label for="ihomem">Homem</label>
+
+                    <input type="radio" name="sexo" id="imulher" value="Mulher">
+                    <label for="imulher">Mulher</label>
+                </fieldset>
+            </fieldset>
+
+            <fieldset> <legend>Detalhes do Serviço</legend>
+
+                <div class="servico">
+                    <input type="checkbox" name="web" id="iweb">
+                    <label for="iweb">Web Site</label>
+                    <br>
+
+                    <input type="checkbox" name="logo" id="ilogo">
+                    <label for="ilogo">LogoTipo</label>
+                    <br>
+
+                    <input type="checkbox" name="sistemas" id="isistemas">
+                    <label for="isistemas">Sistemas</label>
+                    <br>
+                    
+                    <input type="checkbox" name="Bloger" id="ibloger">
+                    <label for="ibloger">Bloger</label>
+                    <br>
+
+                    <input type="checkbox" name="emailPersonalizado" id="iemailPersonalizado">
+                    <label for="iemailPersonalizado">Email Corporativo</label>
+                    
+                </div>
+                <div class="carrateristicas">
+                    <label for="icor">Color</label><br>
+                    <input type="color" name="cor" id="icor"> <br>
+
+                    <label for="ivalor">Escolha o valor</label> <br>
+                    <input type="range" name="valor" id="ivalor" value="50" 
+                    oninput="ivRange.innerHTML=Number(ivalor.value)">
+                </div>
+            </fieldset>
+            <fieldset> <legend>Informação Geral</legend>
+                <div class="servico">
+                    <label for="iselect">Provincias</label><br>
+                    <select name="Provincias" id="iselect">
+                        <optgroup label="Sul pais">
+                            <option value="Maputo">Maputo</option>
+                            <option value="Gaza">Gaza</option>
+                            <option value="Inhambane">Inhambane</option>
+                        </optgroup>
+                        <optgroup label="Centro do Pais">
+                            <option value="Sofal">Sofala</option>
+                            <option value="Beira">Beiera</option>
+                        </optgroup>
+                        <optgroup label="Norte de Pais">
+                            <option value="Quelimane">Quelimane</option>
+                            <option value="Tete">Tete</option>
+                            <option value="C.Delegado">Cabo Delegado</option>
+                            <option value="Nampula">Nampula</option>
+                        </optgroup>
+                    </select> <br> <br>
+
+                    <label for="isoma">Total qty needed</label> <br>
+                    <output name="soma" id="isoma">0</output>  <br> <br>
+
+                    <output name="vRange" id="ivRange">50</output>
+                </div>
+                <div class="carrateristicas">
+                <label for="ipais">Paises</label> <br>
+                <input type="text" name="Pais" id="ipais" list="nacionalidades"> <br>
+                <label for="idisportos">Disportos</label> <br>
+                <input type="text" name="disportos" id="idisportos" list="Disportos">
+
+                <datalist id="nacionalidades">
+                    <option value="Moçambique">Moçambique</option>
+                    <option value="Africa de Sul">Africa de Sul</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Brazil">Brazil</option>
+                </datalist>
+
+                <datalist id="Disportos">
+                    <option value="Futebol">Futebol</option>
+                    <option value="Natação">Natação</option>
+                    <option value="Voli-Bol">Voli-Bol</option>
+                    <option value="Baskate">Baskate</option>
+                    <option value="atletismo">Atletismo</option>
+                    <option value="Dança">Dança</option>
+                </datalist>
+                <fieldset><legend>Quantidade Requerida</legend>
+                    <input max="9" maxlength="9" min="1" type="number" name="QTY1" id="iQTY1" 
+                    oninput="isoma.innerHTML=Number(QTY1.value)+Number(QTY2.value)"> <br>
+
+
+
+                    <input max="9" min="1" type="number" name="QTY2" id="iQTY2"
+                    oninput="soma.innerText = Number(QTY1.value) + Number(QTY2.value)">
+                </fieldset>
+                </div>
+            </fieldset>
+            <P id="sub">
+                <input type="submit" value="Cadastrar">
+                <input type="reset" value="Limpar">
+            </P>
+        </form>
+    </section>
+</body>
+</html>
